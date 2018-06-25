@@ -1,0 +1,250 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.lsapp.smarthome.data.base.CustomTask" />
+
+        <variable
+            name="isAdmin"
+            type="boolean" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@{data.triggerType==0?@color/timer_color_bg:@color/control_green}"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:text="@{data.triggerName}"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:id="@+id/function_close"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="?attr/selectableItemBackground"
+                        android:padding="5dp"
+                        android:src="@drawable/close_white" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:src="@{data.triggerType==0?@color/timer_color:@color/control_green_light}" />
+
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_centerInParent="true"
+                        android:src="@{data.triggerType==0?@drawable/custom_timer:@drawable/custom_line}" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="16dp"
+                android:background="#22000000" />
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:visibility="@{data.triggerType==0?View.GONE:View.VISIBLE}">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/task_check_item"
+                    android:textColor="@color/secondary_text" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/item_1"
+                        android:textColor="@color/primary_text"
+                        android:visibility="@{data.conditionObj.jqTriggerValue==0?View.GONE:View.VISIBLE}" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/item_2"
+                        android:textColor="@color/primary_text"
+                        android:visibility="@{data.conditionObj.pm25TriggerValue==0?View.GONE:View.VISIBLE}" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/item_3"
+                        android:textColor="@color/primary_text"
+                        android:visibility="@{data.conditionObj.vocTriggerValue==0?View.GONE:View.VISIBLE}" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/item_4"
+                        android:textColor="@color/primary_text"
+                        android:visibility="@{data.conditionObj.jbTriggerValue==0?View.GONE:View.VISIBLE}" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:visibility="@{data.triggerType==0?View.VISIBLE:View.GONE}">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/task_action"
+                    android:textColor="@color/secondary_text" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="@{data.conditionObj.startTime}"
+                    android:textColor="@color/primary_text" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/run_time"
+                    android:textColor="@color/secondary_text" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="@{data.runMin+@string/minute}"
+                    android:textColor="@color/primary_text" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:visibility="@{data.triggerType==0?View.VISIBLE:View.GONE}">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/everyday"
+                    android:textColor="@color/secondary_text" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="@{data.conditionObj.isRepeat?@string/yes:@string/no}"
+                    android:textColor="@color/primary_text" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/task_action_function"
+                    android:textColor="@color/secondary_text" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="@{data.gearText}"
+                        android:textColor="@color/primary_text" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="@{data.anionText+@string/anion_machine}"
+                        android:textColor="@color/primary_text"
+                        android:visibility="@{data.anion==0?View.GONE:View.VISIBLE}" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#11000000" />
+
+            <Switch
+                android:id="@+id/function_switcher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_margin="16dp"
+                android:checked="@{data.enable}"
+                android:enabled="@{isAdmin}"
+                android:text="@string/task_begin" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</layout>

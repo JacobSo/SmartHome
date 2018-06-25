@@ -1,0 +1,87 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/colorAccent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:src="@drawable/family" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:text="@string/add_member"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/member_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_margin="16dp"
+            android:hint="@string/phone_number"
+            android:inputType="number"
+            android:lines="1" />
+
+        <EditText
+            android:id="@+id/member_name"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:hint="@string/member_name"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLines="1" />
+        <CheckBox
+            android:id="@+id/member_notify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="短信通知" />
+        <CheckBox
+            android:id="@+id/member_opera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/control_permission" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/member_dismiss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:text="@string/cancel" />
+
+            <Button
+                android:id="@+id/member_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:text="@string/send_invite"
+                android:textColor="@color/colorAccent" />
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

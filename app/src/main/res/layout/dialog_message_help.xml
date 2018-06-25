@@ -1,0 +1,205 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<android.support.v4.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:paddingTop="25dp"
+            android:text="@string/message_flag"
+            android:textColor="@color/primary_text"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="55dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:background="#22000000" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/customize_function"
+                android:textColor="@color/primary_text"
+                android:textSize="18sp" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:src="@color/colorAccent" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/msg_customize" />
+
+            </FrameLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/user_relation"
+                android:textColor="@color/primary_text"
+                android:textSize="18sp" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:src="@color/colorAccent" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/user_member" />
+
+            </FrameLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/normal_message"
+                android:textColor="@color/primary_text"
+                android:textSize="18sp" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:src="@color/colorAccent" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/msg_other" />
+
+            </FrameLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/device_exception"
+                android:textColor="@color/primary_text"
+                android:textSize="18sp" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:src="@color/msg_yellow" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/msg_repair" />
+
+            </FrameLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/check_over_warn"
+                android:textColor="@color/primary_text"
+                android:textSize="18sp" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:src="@color/float_btn" />
+
+                <ImageView
+                    android:id="@+id/msg_img"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/msg_warnning" />
+
+            </FrameLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#22000000" />
+
+        <Button
+            android:id="@+id/message_help_close"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="@string/i_know" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
+</layout>

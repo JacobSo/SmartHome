@@ -1,0 +1,408 @@
+<resources>
+    <string name="app_name">林氏智能家</string>
+
+    <!--tab-->
+    <string name="tab_home">家</string>
+    <string name="tab_message">消息</string>
+    <string name="tab_setting">管理</string>
+
+    <!--login-->
+    <string name="phone_number">手机号码</string>
+    <string name="hint_code">验证码</string>
+    <string name="auto_login">自动登录</string>
+    <string name="sms_login">短信登录</string>
+    <string name="pwd_login">密码登录</string>
+    <string name="set_pwd_login">设置登录密码</string>
+    <string name="login">登录</string>
+    <string name="or">社交登录</string>
+    <string name="code_failed">验证失败，请检查</string>
+    <string name="phone_failed">请填写正确手机号码</string>
+    <string name="phone_code_null">请填写手机和验证码</string>
+    <string name="get_code">获取验证码</string>
+    <string name="been_send">已发送 - </string>
+    <string name="password_first">设置登录密码</string>
+    <string name="password_second">再输入一次，确认登录密码</string>
+    <string name="password_least">密码长度最少6位</string>
+    <string name="password_double_check">请确认两次密码输入无误</string>
+    <string name="password_tips">请先使用短信登录，再修改登录密码</string>
+
+    <!--grant-->
+    <string name="begin_grant">开始授权</string>
+    <string name="readme_grant">授权说明</string>
+    <string name="detail_grant">林氏智能家需要以下这些权限，请授予：\n\n1.位置权限，用于获取当前位置以提供室外空气数据\n\n2.短信权限，用于接收验证登录短信\n\n3.存储权限，用于存储必要的数据\n\n4.电话状态，用于获取手机当前状态以提供更好的应用体验</string>
+    <!--message-->
+    <string name="message_flag">消息标识</string>
+    <string name="message_title">消息通知</string>
+    <string name="message_notification">通知</string>
+    <string name="message_news">林氏最新</string>
+    <string name="message_empty">暂时没有消息哦</string>
+    <string name="message_delete_delay">消息准备删除</string>
+    <string name="message_delete_success">删除成功</string>
+    <!--common-->
+    <string name="male">男</string>
+    <string name="female">女</string>
+    <string name="sex">性别</string>
+    <string name="year">年</string>
+    <string name="month">月</string>
+    <string name="good">优</string>
+    <string name="mid">良</string>
+    <string name="mid_mid">中</string>
+    <string name="bad">差</string>
+    <string name="minute">分钟</string>
+    <string name="second">秒</string>
+    <string name="data">数据</string>
+    <string name="zoom">放大</string>
+    <string name="sorrow">缩小</string>
+    <string name="clean">净化</string>
+    <string name="turn_on">开启</string>
+    <string name="shut_down">关闭</string>
+    <string name="review">查看</string>
+    <string name="slash"> / </string>
+    <string name="dash"> - </string>
+    <string name="exit">退出</string>
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
+    <string name="password">密码</string>
+    <string name="refresh">刷新</string>
+    <string name="customize">自定义</string>
+    <string name="device">设备</string>
+    <string name="undo">撤销</string>
+    <string name="modify">修改</string>
+    <string name="delete">删除</string>
+    <string name="danger">危险</string>
+    <string name="minimum">最小值</string>
+    <string name="maximum">最大值</string>
+    <string name="reject">拒绝</string>
+    <string name="accept">同意</string>
+    <string name="next">下一步</string>
+    <string name="back">上一步</string>
+    <string name="set">配置</string>
+    <string name="finish">完成</string>
+    <string name="scan">扫描</string>
+    <string name="at">于</string>
+    <string name="skip">忽略</string>
+    <string name="skip_step">跳过</string>
+
+
+    <string name="weather_wet">相对湿度</string>
+    <string name="weather_air">空气质量指数：</string>
+    <string name="wait_confirm">等待确认</string>
+    <string name="have_confirm">已确认</string>
+    <string name="no_phone">未知电话</string>
+    <string name="switch_row">\n</string>
+    <string name="no_connect">未连接</string>
+    <string name="connected">已连接</string>
+    <string name="check_device">检测器</string>
+    <string name="action_device">净化器</string>
+    <string name="both_device">检测与执行</string>
+    <string name="sensor_number">个传感器</string>
+    <string name="sensor_working">工作中</string>
+    <string name="sensor_stop">已罢工</string>
+    <string name="right_now">当前：</string>
+    <string name="right_now_check">当前检测：</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="wind_machine">风速</string>
+    <string name="anion_machine">负离子</string>
+    <string name="check_time">检测:</string>
+    <string name="room_quality">的空气质量</string>
+    <string name="outside_quality">室外空气质量</string>
+    <string name="wind_ward">风向</string>
+    <string name="action_running">净化中</string>
+
+    <string name="air_disconnect">净化器已断开</string>
+    <string name="air_unbind">还没有绑定净化器？</string>
+    <string name="air_connect">重新连接</string>
+    <string name="air_connect_text">检测器已断开连接</string>
+    <string name="air_binding">马上绑定</string>
+    <string name="min_value">当天最小值：</string>
+
+    <string name="switch_need">更换滤网</string>
+    <string name="switch_none">滤网正常</string>
+    <string name="select_value">选中检测值</string>
+    <string name="select_time">检测时间</string>
+    <string name="mac_address">设备标识：</string>
+
+    <!--menu-->
+    <string name="add">新增</string>
+    <string name="submit">提交</string>
+    <string name="qr_code">配置网络</string>
+    <string name="zoom_tool">放大缩小工具</string>
+
+    <!--main error-->
+    <string name="no_check_machine">没有检测器</string>
+    <string name="no_action_machine">没有净化器</string>
+    <string name="go_binding">去绑定</string>
+    <string name="no_connect_check_machine">检测器断开</string>
+    <string name="re_connect">连接</string>
+    <string name="no_check_data">没有检测数据</string>
+
+    <!--String tips-->
+    <string name="no_permission">你没有权限操作哦</string>
+    <string name="no_quick_turn">净化器已断开，无法一键净化</string>
+    <string name="loading_quick_turn">一键净化\n开启中</string>
+    <string name="quick_turn">一键净化</string>
+
+    <string name="no_data">没有数据</string>
+    <string name="air_quality_port">空气质量：</string>
+    <string name="air_quality">室内空气评分</string>
+
+    <string name="re_get">重新获取</string>
+    <string name="loading_binding">正在绑定设备</string>
+    <string name="success_binding">绑定成功</string>
+    <string name="location_off_weather_fail">定位已关闭，无法获取准确的天气信息</string>
+    <string name="weather_fail_port">天气信息获取失败：</string>
+    <string name="weather_fail_text">天气信息获取失败</string>
+
+    <string name="today_chart">最新检测</string>
+    <string name="week_chart">本周</string>
+
+    <!--task-->
+    <string name="create_task">创建任务</string>
+    <string name="result_check">检测结果</string>
+    <string name="result_check_over">超标检测任务</string>
+    <string name="result_check_content">指定检测项目，当项目超标时开启净化器相关功能</string>
+    <string name="item_check_over">超标检测</string>
+    <string name="item_check_over_content">当选中的检测项目超过建议值时</string>
+    <string name="run_time">运行时间</string>
+    <string name="action_title">净化器功能</string>
+    <string name="action_content">检测超标后，净化器采取的动作</string>
+    <string name="action_timer_content">到达设定时间后，净化器采取的动作</string>
+    <string name="timer_task">定时任务</string>
+    <string name="timer_task_content">指定时间，开启净化器相关功能</string>
+    <string name="timer_content">当到达设定的时间时</string>
+    <string name="everyday">每天执行</string>
+    <string name="timer_default">00：00</string>
+    <string name="timer_begin_date">开始日期</string>
+    <string name="task_check_item">检测项</string>
+    <string name="item_1">甲醛</string>
+    <string name="item_2">PM2.5</string>
+    <string name="item_3">VOC</string>
+    <string name="item_4">甲苯</string>
+    <string name="task_action">开始执行</string>
+    <string name="task_action_function">开启净化器功能</string>
+    <string name="task_begin">开启任务</string>
+    <string name="wifi_now">当前WiFi：</string>
+
+    <string name="customize_function">自定义功能</string>
+    <string name="customize_function_s">的自定义功能</string>
+    <string name="customize_delete_text">，是否删除这个自定义功能？</string>
+    <string name="air_offline">净化器不在线</string>
+    <string name="check_offline">检测器不在线</string>
+    <string name="customize_timer">定时启动任务</string>
+    <string name="unbinding_notice">从场景移除本设备？</string>
+
+    <string name="add_device">添加设备</string>
+    <string name="device_list_s">设备列表</string>
+    <string name="recovery_device">恢复绑定</string>
+    <string name="recovery_device_title">恢复</string>
+    <string name="recovery_device_select">请选择要恢复到的场景</string>
+
+
+    <string name="address">地址</string>
+    <string name="city">城市</string>
+    <string name="area">区</string>
+    <string name="province">省份</string>
+    <string name="my_address">我的家庭位置</string>
+
+    <string name="add_member">添加我的家庭成员</string>
+    <string name="member_name">称呼</string>
+    <string name="control_permission">允许操作我的设备</string>
+    <string name="send_invite">发出邀请</string>
+    <string name="keep_account">保持关系</string>
+    <string name="change_account_content">已经接受了其他账号的绑定邀请，若要添加成员，先解除绑定。</string>
+    <string name="invitation_content_1"> 邀请你加入他/她/它的智能家庭，是否加入？\n\n提示：同意加入后，您的账号将完整配置 </string>
+    <string name="invitation_content_2"> 账号下的设备，无需设置，直接使用</string>
+    <string name="get_invitation"> 向你发出邀请</string>
+    <string name="send_invitation"> 邀请已发送</string>
+    <string name="break_out_loading"> 正在解除绑定</string>
+    <string name="break_out"> 已解除关系</string>
+    <string name="ask_for_unbinding"> 正在绑定你的账号，共同使用你的设备，是否解除绑定？</string>
+
+    <string name="in_binding">绑定中</string>
+    <string name="user_relation">用户关联</string>
+    <string name="normal_message">普通消息</string>
+    <string name="device_exception">设备异常修复</string>
+    <string name="check_over_warn">检测超标警告</string>
+    <string name="i_know">我知道了</string>
+
+    <string name="add_success">新增成功</string>
+    <string name="modify_success">修改成功</string>
+
+    <string name="add_scene_content">请根据你的设备所在位置，创建您自己的场景，然后添加设备</string>
+    <string name="scene_name">场景名称</string>
+    <string name="task_name">任务名称</string>
+
+
+
+    <!--panel-->
+    <string name="model_day">日常</string>
+    <string name="model_sleep">睡眠</string>
+    <string name="model_shot">喷射</string>
+    <string name="model_normal">普通</string>
+    <string name="madel_strong">加强</string>
+    <string name="hour_1">1小时</string>
+    <string name="hour_2">2小时</string>
+    <string name="hour_3">3小时</string>
+    <string name="calendar">历史</string>
+
+    <string name="family_member">我的家庭成员</string>
+    <string name="message_full">已经没有消息了</string>
+
+
+    <string name="setting_profile">个人信息</string>
+    <string name="setting_help">帮助与标准</string>
+    <string name="setting_push">应用设置</string>
+    <string name="setting_member">家庭成员</string>
+    <string name="setting_about">关于</string>
+    <string name="this_account">当前账号</string>
+    <string name="this_account_remove_unable">当前账号</string>
+    <string name="not_binding">未绑定</string>
+    <string name="no_name">未设置姓名</string>
+    <string name="ask_for_exit">是否登出？</string>
+    <string name="loading_exit">正在退出</string>
+    <string name="edit_profile">查看编辑个人信息</string>
+    <string name="loading">正在获取</string>
+    <string name="clear_success">清理成功</string>
+
+
+    <string name="scene_manage">我的场景</string>
+    <string name="scene_add">添加场景</string>
+    <string name="scene_modify">修改场景信息</string>
+    <string name="quick_set">快速配置</string>
+    <string name="connect_guide">配置向导</string>
+    <string name="get_scene_failed">获取场景列表失败</string>
+
+
+
+    <string name="quit_quick_set">退出快速配置</string>
+    <string name="quit_quick_set_content">确认退出设备快速配置吗</string>
+
+    <string name="common_connect_failed">设备连接已断开</string>
+    <string name="upload_cycle">回传检测数据频率</string>
+    <string name="panel_light">自动关闭面板灯</string>
+    <string name="check_status">传感器状态</string>
+    <string name="action_status">净化器状态</string>
+    <string name="work_light">工作提示灯</string>
+    <string name="wind_light">风扇彩灯</string>
+    <string name="open_close">开关</string>
+    <string name="timer">定时</string>
+    <string name="switch_net">滤网更换</string>
+    <string name="switch_net_message">滤网需要更换了哦！</string>
+    <string name="unbinding">解除绑定</string>
+    <string name="unbinding_content">是否解除绑定本设备？</string>
+    <string name="filter_switch_tips">滤网需要手动更换</string>
+
+    <string name="wifi_account">WiFi SSID</string>
+    <string name="wifi_empty">未连接WiFi</string>
+
+    <string name="connect_help">连接帮助</string>
+    <string name="connect_help_content">1.请在下面输入手机当前连接的WiFi密码 \n\n2.点击设备的WiFi网络按键3秒，直至按键灯闪烁（如果是净化器，需关闭净化器才进行操作）\n\n3.点击对话框的【确认】开始配置网络</string>
+    <string name="connect_title">为设备连接网络</string>
+    <string name="upload_recycle_content">设置检测器收集数据的时间频率，单位为分钟</string>
+
+
+    <string name="no_network_toast">没有网络，请检查</string>
+    <string name="session_toast">请重新登陆</string>
+    <string name="exception_toast">出错了，请稍后再试</string>
+    <string name="set_success_toast">设置成功</string>
+    <string name="set_failed_toast">设置失败</string>
+    <string name="connect_time_out_toast">配置超时，请稍后再试</string>
+    <string name="connect_success_toast">配置成功</string>
+    <string name="password_null_toast">密码不能为空</string>
+    <string name="connecting_toast">正在连接设备</string>
+    <string name="device_finding_toast">发现设备:</string>
+    <string name="time_null_toast">时间不能为空</string>
+    <string name="info_null_toast">信息不能为空</string>
+    <string name="enter_phone_toast">请填入手机号码</string>
+    <string name="expand_connect_help">连接帮助</string>
+    <string name="close_connect_help">收起连接帮助</string>
+    <string name="time_over_toast">所设置时间已经逝去，请设置未来</string>
+    <string name="no_run_time_toast">请设置运行时间</string>
+    <string name="no_item_toast">请选择起码一项超标检测</string>
+    <string name="no_time_date_toast">未设置开始时间和日期</string>
+    <string name="no_task_name_toast">未填写名称</string>
+    <string name="sms_send_toast">未填写名称</string>
+    <string name="delete_confirm_scene">确认要删除本场景？</string>
+    <string name="unbinding_account_content">是否解除账号绑定</string>
+    <string name="unbinding_account_success">解除绑定成功</string>
+    <string name="unbinding_account_failed_port">解除绑定失败:</string>
+    <string name="binding_failed_port">绑定失败:</string>
+    <string name="update_info_failed">更新个人信息失败：</string>
+    <string name="unset_password">未设置登录密码</string>
+
+
+
+    <!--guide-->
+    <string name="guide_chart_title">辅助工具</string>
+    <string name="guide_chart_content">图表支持触控放大缩小，辅助工具可以代替多点触控，按钮实现图表放大缩小功能</string>
+    <string name="guide_customize_title">添加自定义任务</string>
+    <string name="guide_customize_content">自定义任务可以实现通过定时开启净化器，或通过超标检测</string>
+    <string name="guide_device_title">新增智能家居</string>
+    <string name="guide_device_content">扫一扫智能家居的二维码，以添加家居到本场景</string>
+    <string name="guide_calendar_title">空气质量日历</string>
+    <string name="guide_calendar_content">记录您家庭每一天的空气质量变化，点击日历日期，查看每一天最详细的空气检测</string>
+    <string name="guide_member_title">邀您的家人共享</string>
+    <string name="guide_member_content">添加家庭成员，他们就可以共享您的智能净化家居，共同控制或查看室内空气信息</string>
+    <string name="guide_room_title">添加新场景</string>
+    <string name="guide_room_content">根据智能净化器的位置，新增不同类型的场景</string>
+    <string name="guide_null_device">请至少配置一台设备</string>
+
+    <string name="guide_main_quick_title">一键启动净化器</string>
+    <string name="guide_main_quick_content">点击室内空气检测分数，可根据室内情况针对性开启净化器不功能，达到最佳净化效果</string>
+    <string name="guide_main_slide_title">向上滑动查看更多</string>
+    <string name="guide_main_slide_content">手指向上滑动，查看室内空气质量详细结果，以及控制净化器</string>
+    <string name="guide_main_outside_title">室外空气质量</string>
+    <string name="guide_main_outside_content">点击查看室外空气质量，对比室内空气，确保室内空气不受外敌入侵</string>
+    <string name="guide_main_title_title">编辑场景</string>
+    <string name="guide_main_title_content">点击进入编辑场景，修改或删除场景</string>
+    <string name="guide_main_panel_title">净化器状态按钮</string>
+    <string name="guide_main_panel_content">点击按钮，打开控制子面板，遥控净化器</string>
+    <string name="guide_main_panel_sub_title">控制子面板</string>
+    <string name="guide_main_panel_sub_content">点击按钮，即可远控净化器运行</string>
+
+
+    <string name="intro_title_1">智能净化</string>
+    <string name="intro_content_1">随时随地，净化我家的空气</string>
+    <string name="intro_title_2">我家空气日历</string>
+    <string name="intro_content_2">记录家中每一天空气的质量变化</string>
+    <string name="intro_title_3">清新空气</string>
+    <string name="intro_content_3">与家人一起，品味呼吸到的每一口空气</string>
+    <string name="intro_begin">马上开始</string>
+
+
+    <string name="update_title">更新</string>
+    <string name="update_content">检测到新版本，是否更新</string>
+    <string name="update_up_to_date">已经是最新版本了亲！</string>
+
+    <string name="about_version">版本：</string>
+    <string name="about_check_update">检查更新</string>
+    <string name="about_copy_right">Copyright © 2007–2017</string>
+    <string name="about_copy_right_company">阿里顺林有限公司 All Rights Reserved</string>
+    <string name="about_website">访问我们的网站</string>
+    <string name="about_license">开源许可</string>
+    <string name="about_company_title">关于林氏木业</string>
+    <string name="about_feedback">反馈问题</string>
+    <string name="about_company_detail">林氏木业，隶属于佛山市阿里顺林家具有限公司的家具电商品牌，创立于2007年，是伴随阿里巴巴平共同发展的家具电商企业，见证了家具电商行业的崛起与鼎盛。公司每年的规模和业绩都以成倍的速度迅猛增长，专注于原创、品质、环保、时尚的设计理念，产品深受当代追逐生活品质的年轻一代喜爱；创立至今获多项殊荣，连续九年刷新电商家具销量记录，多次夺得电商家具销量冠军，成为中国互联网家具市场极具影响力的知名企业之一。\n\n2014年8月，林氏木业开启家具O2O模式，拓展线下渠道，提升家具体验服务，同年双十一以3.3亿销售额再次卫冕天猫家具类目榜首；2015年双十一以单天5.1亿销量三度蝉联冠军。2016年林氏木业双十一以6.1亿再创家具销售巅峰勇夺“四连冠”，迅猛的发展态势与雄厚的企业实力，雄踞行业领先地位。未来，林氏木业将继续以创新的精神，开放的态度与不屈的坚持，推动家具电商行业的发展与提升。</string>
+
+    <string name="guide_page_1_title">连接家中的WiFi</string>
+    <string name="guide_page_1_wifi_pwd_error">请输入正确的WiFi密码</string>
+    <string name="guide_page_1_content">为手机连上一个稳定的WiFi，连接成功后，在下面填写WiFi密码以配置家居网络。</string>
+
+    <string name="guide_page_2_title">配置检测器网络</string>
+    <string name="guide_page_2_content">1.长按检测器右下角的按钮10秒，直至按钮蓝色的灯慢闪。\n\n2.点击【配置】，开始配置检测器网络\n\n3.如果没有检测器，可以点击【跳过】</string>
+    <string name="guide_page_ex_title">配置净化器网络</string>
+    <string name="guide_page_ex_content">1.在净化器关闭状态下，长按净化器配置WiFi的按钮3秒，直至WiFi按钮的灯块闪。\n\n2.点击【配置】，开始配置净化器网络\n\n3.如果没有净化器，可以点击【跳过】</string>
+    <string name="guide_page_same_error">设备已配置，请【跳过】</string>
+
+
+    <string name="guide_page_3_title">成功连接网络</string>
+    <string name="guide_page_3_content">以下是智能家具所包含的设备：</string>
+    <string name="guide_page_4_title">最后，您的智能家具放在哪里？</string>
+    <string name="guide_page_4_content">为您的智能家具安放在一个合适的位置。</string>
+
+    <string name="mac_found_title">登记新的设备</string>
+    <string name="mac_found_content">温馨提示：由于我们的服务器没找到您家的设备，所以请提交你的设备信息。\n\n请选择刚刚配置的设备：</string>
+
+
+</resources>

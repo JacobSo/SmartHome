@@ -1,0 +1,162 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<data>
+    <variable
+        name="isLost"
+        type="boolean"/>
+    <variable
+        name="isAction"
+        type="boolean"/>
+
+    <import type="android.view.View"/>
+</data>
+
+    <FrameLayout
+        android:background="@color/app_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/main_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="?attr/colorPrimary"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+            </android.support.design.widget.AppBarLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v4.widget.SwipeRefreshLayout
+                    android:id="@+id/swipe_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </android.support.v4.widget.SwipeRefreshLayout>
+
+                <LinearLayout
+                    android:id="@+id/empty_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:src="@drawable/no_data" />
+
+                    <Button
+                        android:id="@+id/empty_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:background="@color/colorAccent"
+                        android:onClick="onEmpty"
+                        android:text="@string/no_data"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone" />
+
+
+
+                <RelativeLayout
+                    android:id="@+id/notice_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_alignParentBottom="true"
+                    android:visibility="@{isLost?View.VISIBLE:View.GONE}"
+                    android:background="@color/black_semi_transparent">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:src="@drawable/error_img" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp"
+                        android:paddingStart="25dp"
+                        android:text="@{isAction?@string/no_check_machine:@string/no_action_machine}"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="?attr/selectableItemBackground"
+                            android:text="@string/skip"
+                            android:onClick="onSkipNotice"
+                            android:textColor="@color/white" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="16dp"
+                            android:layout_marginTop="16dp"
+                            android:background="@android:color/white" />
+
+                        <Button
+                            android:onClick="onReconnect"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="?attr/selectableItemBackground"
+                            android:text="@string/re_connect"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/float_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_margin="16dp"
+            android:visibility="gone"
+            android:src="@drawable/ic_action_name"
+            app:backgroundTint="@color/float_btn" />
+
+    </FrameLayout>
+</layout>

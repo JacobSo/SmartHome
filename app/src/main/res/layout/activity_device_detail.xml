@@ -1,0 +1,454 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.lsapp.smarthome.data.base.Device" />
+
+        <variable
+            name="controlData"
+            type="com.lsapp.smarthome.data.base.Device" />
+
+        <variable
+            name="isAdmin"
+            type="boolean" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:id="@+id/main_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <android.support.design.widget.AppBarLayout
+                    android:id="@+id/app_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/AppTheme.AppBarOverlay">
+
+                    <android.support.design.widget.CollapsingToolbarLayout
+                        android:id="@+id/collapsing_toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:collapsedTitleTextAppearance="@style/collapsedTitleText"
+                        app:layout_scrollFlags="scroll"
+                        app:titleEnabled="false">
+
+                        <ImageView
+                            android:id="@+id/device_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="250dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_horizontal"
+                            android:scaleType="centerCrop"
+                            android:src="@android:color/white"
+                            android:transitionName="share"
+                            tools:targetApi="lollipop" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_alignParentBottom="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/top_shadow" />
+
+                        <android.support.v7.widget.Toolbar
+                            android:id="@+id/toolbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#00000000"
+                            android:minHeight="?attr/actionBarSize"
+                            app:layout_scrollFlags='scroll'
+                            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                            app:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
+                    </android.support.design.widget.CollapsingToolbarLayout>
+                </android.support.design.widget.AppBarLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:text="@{data.itemName}"
+                        android:textColor="@color/primary_text"
+                        android:textSize="25dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginStart="16dp"
+                        android:text="@{@string/mac_address+data.deviceId}"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="@{data.SkuName}"
+                        android:textSize="15dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="16dp"
+                        android:background="#22000000" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_gravity="center_horizontal">
+
+                                <ImageView
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:src="@drawable/connect_ico" />
+
+                                <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_alignParentEnd="true"
+                                    android:src="@drawable/warning"
+                                    android:visibility="@{data.getIsConnect==1?View.GONE:View.VISIBLE}" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@{data.getIsConnect==1?@string/connected:@string/no_connect}" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:visibility="@{(data.ItemType==1||data.ItemType==3)?View.VISIBLE:View.GONE}">
+
+                            <ImageView
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/check_ico" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/check_device" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:visibility="@{(data.ItemType==2||data.ItemType==3)?View.VISIBLE:View.GONE}">
+
+                            <ImageView
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/action_ico" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/action_device" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:visibility="@{data.ItemType==1?View.VISIBLE:View.GONE}">
+
+                            <ImageView
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/chip_ico" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@{controlData.getSensorInfo.size()+@string/sensor_number}" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:visibility="@{(data.ItemType==2||data.ItemType==3)?View.VISIBLE:View.GONE}">
+
+                            <RelativeLayout
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_gravity="center_horizontal">
+
+
+                                <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_alignParentEnd="true"
+                                    android:src="@drawable/warning"
+                                    android:visibility="@{controlData.airClerState.filter==0?View.GONE:View.VISIBLE}" />
+
+                                <ImageView
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:src="@drawable/filter_ico"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_alignParentStart="true"
+                                    android:id="@+id/imageView2" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@{controlData.airClerState.filter==1?@string/switch_need:@string/switch_none}" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:background="#22000000"
+                        android:visibility="@{data.ItemType==1?View.VISIBLE:View.GONE}" />
+
+                    <Switch
+                        android:id="@+id/wind_light_switch"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_margin="16dp"
+                        android:checked="@{controlData.fanOn==1}"
+                        android:enabled="@{isAdmin &amp;&amp; data.isConnect==1}"
+                        android:text="@string/wind_light"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="18sp"
+                        android:visibility="@{data.ItemType==1?View.VISIBLE:View.GONE}" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginStart="16dp"
+                        android:background="#22000000"
+                        android:visibility="@{data.ItemType==1?View.VISIBLE:View.GONE}" />
+
+                    <Switch
+                        android:id="@+id/work_light_switch"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_margin="16dp"
+                        android:checked="@{controlData.worklightOn==1}"
+                        android:enabled="@{isAdmin &amp;&amp; data.isConnect==1}"
+                        android:text="@string/work_light"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="18sp"
+                        android:visibility="@{data.ItemType==1?View.VISIBLE:View.GONE}" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginStart="16dp"
+                        android:background="#22000000"
+                        android:visibility="@{data.ItemType==1?View.VISIBLE:View.GONE}" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:visibility="@{data.ItemType==1?View.VISIBLE:View.GONE}">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="@string/upload_cycle"
+                            android:textColor="@color/secondary_text"
+                            android:textSize="18sp" />
+
+                        <Button
+                            android:id="@+id/detail_time_set"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:background="@android:color/transparent"
+                            android:enabled="@{data.isConnect==1}"
+                            android:onClick="onUploadTimeSet"
+                            android:text="@{controlData.upInterval+@string/second}"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="18sp" />
+                    </RelativeLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:background="#22000000"
+                        android:visibility="@{data.ItemType==2?View.VISIBLE:View.GONE}" />
+
+                    <Switch
+                        android:id="@+id/light_switch"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_margin="16dp"
+                        android:checked="@{controlData.airClerState.panelLight==1}"
+                        android:enabled="@{isAdmin &amp;&amp; data.isConnect==1}"
+                        android:text="@string/panel_light"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="18sp"
+                        android:visibility="@{data.ItemType==2?View.VISIBLE:View.GONE}" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginStart="16dp"
+                        android:background="#22000000"
+                        android:visibility="@{data.ItemType==2 &amp;&amp; controlData.airClerState.filter==1?View.VISIBLE:View.GONE}" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:visibility="@{data.ItemType==2 &amp;&amp; controlData.airClerState.filter==1?View.VISIBLE:View.GONE}">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="@string/filter_switch_tips"
+                            android:textColor="@color/secondary_text"
+                            android:textSize="18sp" />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:background="@android:color/transparent"
+                            android:onClick="onFilterSwitch"
+                            android:text="@string/finish"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="18sp" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginStart="16dp"
+                        android:background="#22000000"
+                        android:visibility="@{data.ItemType==2?View.GONE:View.VISIBLE}" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/check_status"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="18sp"
+                        android:visibility="@{controlData.sensorInfo==null?View.GONE:View.VISIBLE}" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:visibility="@{controlData.sensorInfo==null?View.GONE:View.VISIBLE}" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#22000000" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="16dp"
+                        android:text="@string/unbinding_notice"
+                        android:textSize="18sp" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="bottom"
+                        android:layout_margin="16dp"
+                        android:background="@color/colorAccent"
+                        android:onClick="onUnbind"
+                        android:text="@string/unbinding"
+                        android:textColor="@android:color/white" />
+                </RelativeLayout>
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+    </FrameLayout>
+</layout>

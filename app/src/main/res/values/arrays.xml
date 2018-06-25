@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="scene_list">
+        <item>客厅</item>
+        <item>餐厅</item>
+        <item>卧室</item>
+    </string-array>
+
+    <string-array name="room_menu">
+        <item>修改名称</item>
+        <item>删除场景</item>
+
+    </string-array>
+    <string-array name="code_list">
+        <item>扫码以获取设备</item>
+        <item>手动填写</item>
+    </string-array>
+    <string-array name="cam_list">
+        <item>拍照</item>
+        <item>相册</item>
+    </string-array>
+    <string-array name="time_list">
+        <item>3秒</item>
+        <item>30秒</item>
+        <item>60秒</item>
+        <item>自定义</item>
+    </string-array>
+    
+    <string-array name="color_dark">
+        <item>#512DA8</item>
+        <item>#00796B</item>
+        <item>#303F9F</item>
+        <item>#689F38</item>
+        <item>#455A64</item>
+        <item>#F57C00</item>
+        <item>#0288D1</item>
+        <item>#D32F2F</item>
+        <item>#FBC02D</item>
+    </string-array>
+
+    <string-array name="color_light">
+        <item>#673AB7</item>
+        <item>#009688</item>
+        <item>#3F51B5</item>
+        <item>#8BC34A</item>
+        <item>#607D8B</item>
+        <item>#FF9800</item>
+        <item>#03A9F4</item>
+        <item>#F44336</item>
+        <item>#FFEB3B</item>
+    </string-array>
+
+    <string-array name="air_level">
+        <item>睡眠模式</item>
+        <item>日常模式</item>
+        <item>喷射模式</item>
+    </string-array>
+    <string-array name="air_effect">
+        <item>关闭</item>
+        <item>普通</item>
+        <item>加强</item>
+    </string-array>
+    <string-array name="time_set">
+        <item>每日</item>
+        <item>今日</item>
+        <item>明日</item>
+        <item>自定义</item>
+    </string-array>
+
+    <string-array name="time_minute">
+        <item>60分钟</item>
+        <item>120分钟</item>
+        <item>180分钟</item>
+        <item>自定义</item>
+    </string-array>
+
+
+
+
+
+</resources>

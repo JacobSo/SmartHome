@@ -1,0 +1,61 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.lsapp.smarthome.data.base.GuideDevice" />
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="?attr/selectableItemBackground"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:src="@{data.itemType==1?@drawable/check_ico:@drawable/action_ico}" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="@color/primary_text"
+                    android:text="@{data.itemType==1?@string/check_device:@string/action_device}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="@{data.mac}" />
+            </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:src="@{data.isConnect==1?@drawable/green_point:@drawable/red_point}"
+                android:layout_marginEnd="16dp"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</layout>

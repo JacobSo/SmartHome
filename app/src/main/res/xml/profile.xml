@@ -1,0 +1,58 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="绑定信息">
+        <EditTextPreference
+            android:key="mobile"
+            android:lines="1"
+            android:maxLines="1"
+            android:numeric="integer"
+            android:summary="手机"
+            android:title="手机" />
+        <PreferenceScreen
+            android:key="wechat"
+            android:summary="未绑定"
+            android:title="微信" />
+        <PreferenceScreen
+            android:key="taobao"
+            android:summary="未绑定"
+            android:title="淘宝" />
+        <PreferenceScreen
+            android:key="sina"
+            android:summary="未绑定"
+            android:title="微博" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="个人信息">
+        <PreferenceScreen
+            android:inputType="text"
+            android:key="password"
+            android:lines="1"
+            android:maxLines="1"
+            android:summary=""
+            android:title="登录密码" />
+
+        <EditTextPreference
+            android:inputType="text"
+            android:key="name"
+            android:lines="1"
+            android:maxLines="1"
+            android:summary="姓名"
+            android:title="姓名" />
+
+
+        <PreferenceScreen
+            android:key="birth"
+            android:summary="生日"
+            android:title="生日" />
+        <PreferenceScreen
+            android:key="sex"
+            android:summary="性别"
+            android:title="性别" />
+        <PreferenceScreen
+            android:key="location"
+            android:summary="城市/地区"
+            android:title="城市/地区" />
+
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

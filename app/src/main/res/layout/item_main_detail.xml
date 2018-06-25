@@ -1,0 +1,74 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.lsapp.smarthome.data.base.CheckData" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#11000000" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+<!--
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="16dp"
+                    android:src="@{data.levelColor}" />
+-->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{data.name}"
+                    android:textColor="@color/primary_text"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/value_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@{data.data+data.unit}" />
+
+            <TextView
+                android:id="@+id/text_bg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_marginEnd="16dp"
+                android:layout_alignParentEnd="true"
+                android:text="@{data.levelName}"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</layout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <resources>
+        <color name="colorPrimary">#00BCD4</color>
+        <color name="colorPrimaryDark">#0097A7</color>
+        <color name="colorAccent">#00BCD4</color>
+        <color name="colorAccent_light">#B2EBF2</color>
+
+    <color name="float_btn">#FF5252</color>
+    <color name="float_btn_light">#FFCDD2</color>
+    <color name="msg_yellow">#FFC107</color>
+    <color name="msg_yellow_light">#FFECB3</color>
+
+
+    <color name="black_semi_transparent">#B2000000</color>
+    <drawable name="transparent">#00000000</drawable>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="icon_disabled">#FF63727B</color>
+    <color name="icons">#212121</color>
+    <color name="divider">#BDBDBD</color>
+    <color name="app_background">#eeeeee</color>
+    <color name="white">#ffffff</color>
+
+
+    <color name="tips_red">#ef857d</color>
+    <color name="control_gray">#dd8f4d</color>
+    <color name="tips_yellow">#fcca0d</color>
+    <color name="tips_green">#7bd531</color>
+
+    <!--task-->
+    <color name="timer_color">#1976D2</color>
+    <color name="timer_color_bg">#448AFF</color>
+    <color name="control_green">#3db280</color>
+    <color name="control_green_light">#388E3C</color>
+<!--color util  switch green blue-->
+    <color name="quality_green">#0288D1</color>
+    <color name="quality_blue">#4CAF50</color>
+    <color name="quality_yellow">#FF9800</color>
+    <color name="quality_red">#FF5252</color>
+    <color name="quality_null">#FF63727B</color>
+
+
+
+
+
+</resources>
+

@@ -1,0 +1,46 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.lsapp.smarthome.data.base.Sensor" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:src="@{data.state==1?@drawable/green_point:@drawable/red_point}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@{data.SensorName}"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="16dp"
+            android:text="@{data.state==1?@string/sensor_working:@string/sensor_stop}"
+            android:textColor="@{data.state==1?@color/quality_blue:@color/float_btn}"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+</layout>

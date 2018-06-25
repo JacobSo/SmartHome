@@ -1,0 +1,91 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.lsapp.smarthome.data.base.CheckData" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#11000000" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:background="#11000000" />
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/corners_btn_half"
+                android:gravity="center"
+                android:text="@{data.level}" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@{data.name}"
+                    android:textColor="@color/primary_text"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@{data.data}"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@{data.unit}"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="45dp"
+                    android:layout_height="3dp"
+                    android:layout_gravity="center"
+                    android:background="@{data.color}" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#11000000" />
+
+
+    </LinearLayout>
+
+</layout>

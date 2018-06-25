@@ -1,0 +1,49 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="检测标准">
+        <PreferenceScreen
+            android:key="mobile"
+            android:title="检测指标参考" />
+        <PreferenceScreen
+            android:key="wechat"
+            android:title="林氏空气评分" />
+
+
+        <PreferenceScreen
+            android:key="taobao"
+            android:title="室外空气质量" />
+        <PreferenceScreen
+            android:key="sina"
+            android:title="空气净化小知识" />
+
+
+    </PreferenceCategory>
+    <PreferenceCategory android:title="应用帮助">
+        <PreferenceScreen
+            android:key="location"
+            android:title="场景描述" />
+        <PreferenceScreen
+            android:key="birth"
+            android:title="一键净化" />
+        <PreferenceScreen
+            android:key="birth"
+            android:title="净化器控制说明" />
+        <PreferenceScreen
+            android:key="sex"
+            android:title="设备绑定" />
+        <PreferenceScreen
+            android:key="location"
+            android:title="设备连网与断线" />
+        <PreferenceScreen
+            android:key="location"
+            android:title="净化日历" />
+        <PreferenceScreen
+            android:key="location"
+            android:title="家庭成员与权限" />
+        <PreferenceScreen
+            android:key="location"
+            android:title="消息通知标识" />
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

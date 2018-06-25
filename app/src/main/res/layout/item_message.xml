@@ -1,0 +1,162 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.lsapp.smarthome.data.base.UserMessage" />
+
+        <variable
+            name="dark"
+            type="int" />
+
+        <variable
+            name="light"
+            type="int" />
+
+
+    </data>
+
+    <com.daimajia.swipe.SwipeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/trash"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@color/float_btn"
+            android:gravity="center"
+            android:tag="Bottom2">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/message_trash" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/undo_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/black_semi_transparent"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="16dp"
+                    android:text="@string/message_delete_delay"
+                    android:textColor="@android:color/white" />
+
+                <Button
+                    android:id="@+id/undo_button"
+                    style="@style/Base.Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/undo"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorAccent" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/message_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:background="@android:color/white"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:id="@+id/message_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:orientation="vertical">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+
+                                <FrameLayout
+                                    android:id="@+id/message_help_image"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="20dp">
+
+                                    <de.hdodenhof.circleimageview.CircleImageView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        android:src="@{dark}" />
+
+                                    <ImageView
+                                        android:id="@+id/msg_img"
+                                        android:layout_width="25dp"
+                                        android:layout_height="25dp"
+                                        android:layout_gravity="center"
+                                        android:src="@drawable/msg_other" />
+
+                                </FrameLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal"
+                                        android:text="@{data.formatDate}" />
+
+                                    <com.cpiz.android.bubbleview.BubbleTextView
+                                        android:id="@+id/big4"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:lineSpacingExtra="9dp"
+                                        android:padding="20dp"
+                                        android:text="@{data.msg}"
+                                        android:textSize="15sp"
+                                        app:bb_arrowDirection="Left"
+                                        app:bb_arrowHeight="15dp"
+                                        app:bb_arrowOffset="1dp"
+                                        app:bb_arrowWidth="20dp"
+                                        app:bb_cornerBottomLeftRadius="10dp"
+                                        app:bb_cornerBottomRightRadius="10dp"
+                                        app:bb_cornerTopLeftRadius="10dp"
+                                        app:bb_cornerTopRightRadius="10dp"
+                                        app:bb_fillColor="@color/colorAccent_light"
+                                        app:bb_fillPadding="5dp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </FrameLayout>
+    </com.daimajia.swipe.SwipeLayout>
+</layout>

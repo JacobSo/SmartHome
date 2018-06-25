@@ -1,0 +1,173 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="scene"
+            type="com.lsapp.smarthome.data.base.Scene" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shape_a_bg">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp" />
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="25dp"
+                    android:src="@drawable/anim_weather_rain"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/image_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:src="@drawable/anim_bedroom_a" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="180dp"
+                android:clickable="true">
+
+                <com.cpiz.android.bubbleview.BubbleTextView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/grade_tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="25dp"
+                    android:padding="5dp"
+                    android:text="@{scene.vocText}"
+                    android:textColor="@android:color/white"
+                    app:bb_arrowDirection="Left"
+                    app:bb_arrowHeight="5dp"
+                    app:bb_arrowOffset="50dp"
+                    app:bb_arrowWidth="5dp"
+                    app:bb_cornerBottomLeftRadius="0dp"
+                    app:bb_cornerBottomRightRadius="5dp"
+                    app:bb_cornerTopLeftRadius="5dp"
+                    app:bb_cornerTopRightRadius="5dp" />
+
+                <TextView
+                    android:id="@+id/grade_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/air_quality"
+                    android:textColor="@android:color/white" />
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/pie_chart1"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:clickable="true" />
+
+                    <LinearLayout
+                        android:id="@+id/error_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/error_tips"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="16dp"
+                            android:textColor="@android:color/white" />
+
+                        <TextView
+                            android:id="@+id/error_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:background="@drawable/corners_btn_accent"
+                            android:clickable="true"
+                            android:inAnimation="@android:anim/slide_in_left"
+                            android:outAnimation="@android:anim/slide_out_right"
+                            android:padding="16dp"
+                            android:textColor="@color/colorAccent" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/quick_turn_single_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/corners_btn_accent"
+                        android:clickable="true"
+                        android:inAnimation="@android:anim/slide_in_left"
+                        android:outAnimation="@android:anim/slide_out_right"
+                        android:padding="16dp"
+                        android:text="@string/quick_turn"
+                        android:textColor="@color/colorAccent" />
+
+                    <RelativeLayout
+                        android:id="@+id/running_flag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:visibility="invisible">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="@string/action_running"
+                            android:textColor="@android:color/white"
+                            android:textSize="18sp" />
+
+                        <ProgressBar
+                            style="@style/myProgressBarStyleLarge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal" />
+                    </RelativeLayout>
+                </FrameLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/expand_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:padding="16dp"
+            android:src="@drawable/arrow_down" />
+
+
+    </FrameLayout>
+
+</layout>

@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+  >
+    <item
+        android:id="@+id/action_tool"
+        android:icon="@drawable/ic_action_zoom"
+        android:orderInCategory="100"
+        android:title="@string/zoom_tool"
+        app:showAsAction="never" />
+
+
+</menu>

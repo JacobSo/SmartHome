@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+    <item android:drawable="@drawable/anim_bedroom_c_01_" android:duration="400"/>
+    <item android:drawable="@drawable/anim_bedroom_c_03" android:duration="200"/>
+    <item android:drawable="@drawable/anim_bedroom_c_04" android:duration="200"/>
+    <item android:drawable="@drawable/anim_bedroom_c_01_" android:duration="1000"/>
+    <item android:drawable="@drawable/anim_bedroom_c_08_10" android:duration="1000"/>
+    <item android:drawable="@drawable/anim_bedroom_c_12_16" android:duration="200"/>
+    <item android:drawable="@drawable/anim_bedroom_c_13_15" android:duration="200"/>
+    <item android:drawable="@drawable/anim_bedroom_c_14" android:duration="200"/>
+    <item android:drawable="@drawable/anim_bedroom_c_13_15" android:duration="200"/>
+    <item android:drawable="@drawable/anim_bedroom_c_12_16" android:duration="200"/>
+    <item android:drawable="@drawable/anim_bedroom_c_01_" android:duration="400"/>
+
+</animation-list>

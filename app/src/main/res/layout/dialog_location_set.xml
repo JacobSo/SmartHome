@@ -1,0 +1,129 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/colorAccent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:src="@drawable/location" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:text="@string/my_address"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_weight="1">
+
+                <AutoCompleteTextView
+                    android:id="@+id/location_province"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/province"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:maxLines="1" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_weight="1"
+                android:weightSum="1">
+
+                <AutoCompleteTextView
+                    android:id="@+id/location_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/area"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:maxLines="1" />
+
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1">
+
+                <AutoCompleteTextView
+                    android:id="@+id/location_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/city"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:maxLines="1" />
+
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp">
+
+            <AutoCompleteTextView
+                android:id="@+id/location_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/address"
+                android:inputType="text"
+                android:lines="1"
+                android:maxLines="1" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/location_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="?attr/selectableItemBackground"
+                android:text="@string/confirm"
+                android:textColor="@color/colorAccent" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</layout>

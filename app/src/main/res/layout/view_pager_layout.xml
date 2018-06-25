@@ -1,0 +1,190 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:htext="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.lsapp.smarthome.data.WeatherData" />
+
+    </data>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.lsapp.smarthome.ui.widget.CustomViewPager
+                android:id="@+id/m_pager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:flipInterval="30"
+                android:persistentDrawingCache="animation" />
+
+            <com.ogaclejapan.smarttablayout.SmartTabLayout
+                android:id="@+id/strip"
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:layout_gravity="bottom|center_horizontal"
+                app:stl_customTabTextLayoutId="@layout/custom_tab_circle"
+                app:stl_dividerColor="@android:color/transparent"
+                app:stl_dividerThickness="0dp"
+                app:stl_indicatorColor="@android:color/white"
+                app:stl_indicatorCornerRadius="4dp"
+                app:stl_indicatorGravity="center"
+                app:stl_indicatorInterpolation="linear"
+                app:stl_indicatorThickness="8dp"
+                app:stl_underlineColor="@android:color/transparent"
+                app:stl_underlineThickness="0dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/weather_layout"
+                    android:clickable="true"
+                    android:background="?attr/selectableItemBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp"
+                        android:orientation="horizontal">
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="16dp">
+
+                            <com.github.ybq.android.spinkit.SpinKitView
+                                android:id="@+id/control_temp_loading"
+                                style="@style/SpinKitView.DoubleBounce"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                app:SpinKit_Color="@android:color/white" />
+
+                            <ImageView
+                                android:id="@+id/weather_image"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp" />
+
+
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="16dp"
+                            android:text="@{data.result.get(0).weather}"
+                            android:textColor="@android:color/white"
+                            android:textSize="18sp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/weather_now_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{data.result.get(0).future.get(0).temperature}"
+                            android:textColor="@android:color/white"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="10dp"
+                            android:background="@{data.result.get(0).gradeColor}"
+                            android:text="@{data.result.get(0).airCondition}"
+                            android:textColor="@android:color/white" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/weather_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:padding="16dp"
+                android:src="@drawable/anim_weather_cloud" />
+
+            <TextView
+                android:id="@+id/room_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
+                android:background="@drawable/corners_btn_half"
+                android:paddingBottom="12dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="20dp"
+                android:paddingTop="12dp"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp"
+                android:visibility="gone" />
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/room_loading"
+                style="@style/SpinKitView.DoubleBounce"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_gravity="center"
+                app:SpinKit_Color="@color/white" />
+
+            <LinearLayout
+                android:id="@+id/begin_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="invisible"
+                android:tag="guide_begin"
+                android:layout_marginTop="100dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/mm_success" />
+
+                <Button
+                    android:id="@+id/btn_add_scene"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:background="@drawable/corners_btn_accent"
+                    android:padding="16dp"
+                    android:text="@string/quick_set"
+                    android:textColor="@color/colorAccent" />
+            </LinearLayout>
+        </FrameLayout>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+</layout>

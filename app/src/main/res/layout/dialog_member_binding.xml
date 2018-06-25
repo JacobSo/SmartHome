@@ -1,0 +1,126 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="data"
+            type="com.lsapp.smarthome.data.base.Account" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/colorAccent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/account_binding" />
+
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_marginBottom="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_centerInParent="true">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        app:civ_border_width="3dp"
+                        app:civ_border_color="@android:color/white"
+                        android:layout_centerInParent="true"
+                        android:src="@{data.nameColor}" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/user_member"
+                        />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/corners_btn_accent"
+                    android:text="@{data.nickname}"
+
+                    android:textColor="@color/primary_text" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/member_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textSize="18sp"
+            android:textColor="@color/primary_text"
+            android:text="@string/in_binding" />
+
+
+        <TextView
+            android:id="@+id/member_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/change_account_content" />
+        <CheckBox
+            android:id="@+id/member_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:enabled="false"
+            android:checked="@{data.isAllowOperat==1}"
+            android:text="@string/control_permission" />
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/member_disconnect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:text="@string/unbinding" />
+
+                <Button
+                    android:id="@+id/member_dismiss"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/member_disconnect"
+                    android:background="@android:color/transparent"
+                    android:textColor="@color/colorAccent"
+                    android:text="@string/keep_account" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</layout>

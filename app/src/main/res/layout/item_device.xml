@@ -1,0 +1,97 @@
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.lsapp.smarthome.data.base.Device" />
+
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:foreground="?attr/selectableItemBackground">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="@{data.ItemName}"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/primary_text"
+                    android:textSize="25sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="16dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="16dp"
+                        android:src="@{data.getIsConnect==1?@drawable/green_point:@drawable/red_point}" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{data.getIsConnect==1?@string/connected:@string/no_connect}"
+                        android:textColor="@{data.getIsConnect==1?@color/quality_blue:@color/float_btn}"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <ImageView
+                android:id="@+id/device_image"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:scaleType="centerCrop"
+                android:transitionName="share"
+                tools:targetApi="lollipop" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/mac_address+data.deviceId}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@{data.getTypeName}"
+                    android:textColor="@color/secondary_text" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+</layout>

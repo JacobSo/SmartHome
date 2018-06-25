@@ -1,0 +1,190 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<data>
+    <variable
+        name="data"
+        type="com.lsapp.smarthome.data.WeatherData"/>
+
+
+</data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/weather_image"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginBottom="16dp"
+                    android:src="@drawable/weather_rain" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:text="@{data.result.get(0).temperature}"
+                        android:textColor="@android:color/white"
+                        android:textSize="45sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{data.result.get(0).weather}"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@{data.result.get(0).province+data.result.get(0).city}"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{data.result.get(0).date+data.result.get(0).week}"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/outside_quality"
+                android:textColor="@color/secondary_text"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:textColor="@android:color/white"
+                android:background="@{data.result.get(0).gradeColor}"
+                android:text="@{data.result.get(0).airCondition}"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/wind_ward"
+                android:textColor="@color/secondary_text"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="@{data.result.get(0).wind}"
+                android:textColor="@color/primary_text"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/weather_wet"
+                android:textColor="@color/secondary_text"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="@{data.result.get(0).humidity}"
+                android:textColor="@color/primary_text"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/select_time"
+                android:textColor="@color/secondary_text"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="@{data.result.get(0).time}"
+                android:textColor="@color/primary_text"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/weather_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="@string/refresh" />
+
+            <Button
+                android:id="@+id/weather_dismiss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="@string/confirm"
+                android:textColor="@color/colorAccent" />
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

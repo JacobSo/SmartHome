@@ -1,0 +1,42 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="通知">
+
+
+        <SwitchPreference
+            android:key="warm"
+            android:summary="当检测到房间条件低于阈值时发送通知"
+            android:defaultValue="true"
+            android:title="警告通知" />
+
+        <SwitchPreference
+            android:key="common"
+            android:defaultValue="true"
+            android:summary="设备普通操作时发送通知"
+            android:title="日常设备通知" />
+
+        <SwitchPreference
+            android:key="news"
+            android:defaultValue="true"
+            android:summary="林氏最新优惠都在这里"
+            android:title="林氏消息" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="应用">
+        <PreferenceScreen
+            android:key="unbinding"
+            android:summary="恢复解除绑定的设备"
+            android:title="恢复绑定" />
+        <PreferenceScreen
+            android:key="guide"
+            android:summary="重新启动初次使用的操作向导"
+            android:title="启动操作向导" />
+
+        <PreferenceScreen
+            android:key="clear"
+            android:title="清理图片缓存" />
+
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>
